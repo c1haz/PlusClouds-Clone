@@ -4,275 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlusClouds Clone</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-       
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-        .top-bar {
-            background-color: #0e3b96;
-            color: white;
-            padding: 5px 0;
-        }
-        .top-bar .container {
-            display: flex;
-            justify-content: flex-start;
-            gap: 20px;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-        .nav-item {
-            position: relative;
-            margin-left: 1rem;
-        }
-        .nav-item > a {
-            text-decoration: none;
-            color: #333;
-            padding: 0.5rem;
-            display: block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .nav-item:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-        .login-button a.login {
-            background-color: #1f4aff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-      
-        .hero {
-            background-color: #f0f0f0;
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 100px;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        .hero2 {
-            background-color: #f0f0f0;
-            padding: 4rem 2rem;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .hero2-text {
-            flex: 1;
-            padding-right: 50px;
-        }
-        .hero2-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #333;
-            text-align: center;
-        }
-        .hero2-text p {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .hero2-image {
-            flex: 1;
-        }
-        .hero2-image img {
-            max-width: 100%;
-            height: auto;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #4052ff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-       
-        .video-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 50px 0;
-            background-color: #f0f0f0;
-        }
-        .video-section iframe {
-            width: 80vw;
-            max-width: 600px;
-            height: 45vw;
-            max-height: 338px;
-            border: none;
-        }
-        .services-section {
-        font-family: Arial, sans-serif;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
-    .services-header {
-        text-align: left;
-        margin-bottom: 40px;
-    }
-    .services-header h2 {
-        color: #0863db;
-        font-size: 12px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-    .services-header h3 {
-        font-size: 18px;
-        color: #666;
-        text-align: center;
-    }
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-    }
-    .service-item {
-        text-align: left;
-    }
-    .service-icon {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 15px;
-    }
-    .service-title {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-    .service-description {
-        font-size: 14px;
-        color: #666;
-        margin-bottom: 15px;
-    }
-    .service-link {
-        color: #4CAF50;
-        text-decoration: none;
-        font-size: 14px;
-    }
-    .service-link:hover {
-        text-decoration: underline;
-    }
-    @media (max-width: 1024px) {
-        .services-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    @media (max-width: 600px) {
-        .services-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-        .footer {
-        background-color: #1e2530;
-        color: #ffffff;
-        padding: 40px 0;
-        font-family: Arial, sans-serif;
-    }
-    .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-    }
-    .footer-logo img {
-        width: 150px;
-        margin-bottom: 10px;
-    }
-    .footer-info {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-    .footer-section h3 {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-    .footer-section p {
-        margin-bottom: 10px;
-    }
-   
-    .footer-bottom {
-        background-color: #1e2530;
-        color: #ffffff;
-        padding: 15px 0;
-        text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="top-bar">
             <div class="container">
                 <span class="email">
-                    <img src="mail-logo.png" height="15" alt="email"> info@plusclouds.com
+                    <img src="text_sprites/mail-logo.png" height="15" alt="email"> info@plusclouds.com
                 </span>
                 <span class="phone">
-                    <img src="Phone_icon.png" height="15" alt="phone"> 0 850 321 88 99
+                    <img src="text_sprites/Phone_icon.png" height="15" alt="phone"> 0 850 321 88 99
                 </span>
             </div>
         </div>
@@ -326,7 +68,7 @@
                     <a href="#" class="cta-button">Ücretsiz kayıt ol ve başla!</a>
                 </div>
                 <div class="hero2-image">
-                    <img src="applicationplatform.png" alt="PlusClouds Application Platform">
+                    <img src="images/applicationplatform.png" alt="PlusClouds Application Platform">
                 </div>
             </section>
         </div>
@@ -339,49 +81,49 @@
         </div>
         <div class="services-grid">
             <div class="service-item">
-                <img src="server.png" alt="Server Icon" class="service-icon">
+                <img src="sprites/server.png" alt="Server Icon" class="service-icon">
                 <h4 class="service-title">Ölçeklenebilir Sunucular</h4>
                 <p class="service-description">Yüksek performans için optimize edilmiş Bulut Sunucuları, %50'ye varan indirimli fiyatlarla.</p>
                 <a href="#" class="service-link">Ölçeklenebilir sunucuları incele</a>
             </div>
             <div class="service-item">
-                <img src="vpc.png" alt="VPC Icon" class="service-icon">
+                <img src="sprites/vpc.png" alt="VPC Icon" class="service-icon">
                 <h4 class="service-title">Sanal Veri Merkezi (VPC)</h4>
                 <p class="service-description">Kendi fiziksel veri merkezinizi kurup binlerce dolar para harcamak yerine sanal veri merkezi ile maliyetleri en aşağı çekebilirsiniz.</p>
                 <a href="#" class="service-link">Sanal veri merkezini incele</a>
             </div>
             <div class="service-item">
-                <img src="nas.png" alt="NAS Icon" class="service-icon">
+                <img src="sprites/nas.png" alt="NAS Icon" class="service-icon">
                 <h4 class="service-title">Ağ Depolama (NAS)</h4>
                 <p class="service-description">Farklı depolama ihtiyaçlarına farklı çözümler üreten, yüksek ve bütçeye göre değişen performanslara sahip depolama hizmeti.</p>
                 <a href="#" class="service-link">Ağ depolama incele</a>
             </div>
             <div class="service-item">
-                <img src="yuk.png" alt="Load Balancer Icon" class="service-icon">
+                <img src="sprites/yuk.png" alt="Load Balancer Icon" class="service-icon">
                 <h4 class="service-title">Yük Dengeleyici (LB)</h4>
                 <p class="service-description">Artık sunucunuzun limitine ulaştınız ama daha fazla ziyaretçi mi alacaksınız? Yük dengeleyici servislerimizi inceleyin.</p>
                 <a href="#" class="service-link">Yük dengeleyiciyi incele</a>
             </div>
             <div class="service-item">
-                <img src="firewall.png" alt="Firewall Icon" class="service-icon">
+                <img src="sprites/firewall.png" alt="Firewall Icon" class="service-icon">
                 <h4 class="service-title">Güvenlik Duvarı (Firewall)</h4>
                 <p class="service-description">Kolay kullanımlı PlusClouds NetGateway® ile ağınızı dışarıdan gelen istenmeyen trafiklerden koruyun, hemen deneyimli olmasını bile.</p>
                 <a href="#" class="service-link">Güvenlik duvarını incele</a>
             </div>
             <div class="service-item">
-                <img src="dns.png" alt="DNS Icon" class="service-icon">
+                <img src="sprites/dns.png" alt="DNS Icon" class="service-icon">
                 <h4 class="service-title">Ölçeklenebilir DNS</h4>
                 <p class="service-description">Bulut DNS ile daha hızlı açılan web sitelerine sahip olmak ücretsiz ve kolay: Alan adını kaydedip ve ayarları güncelleyin...</p>
                 <a href="#" class="service-link">Ücretsiz kullan</a>
             </div>
             <div class="service-item">
-                <img src="nat.png" alt="NAT & Proxy Icon" class="service-icon">
+                <img src="sprites/nat.png" alt="NAT & Proxy Icon" class="service-icon">
                 <h4 class="service-title">NAT & Proxy Yönetimi</h4>
                 <p class="service-description">Sunucunuzun IP adresini maskelemek ve sunucunuzu gizli mi tutmak isteyen müşterilerimiz için özel geliştirildi.</p>
                 <a href="#" class="service-link">Daha fazla öğren</a>
             </div>
             <div class="service-item">
-                <img src="hazir.png" alt="Ready Images Icon" class="service-icon">
+                <img src="sprites/hazir.png" alt="Ready Images Icon" class="service-icon">
                 <h4 class="service-title">Hazır İmajlar</h4>
                 <p class="service-description">PlusClouds mühendislerinin, sizin için hazırladığı 50'den fazla hazır kurulu işletim sistemi ve servisi tek tıklamayla kurun.</p>
                 <a href="#" class="service-link">Hazır imajları incele</a>
@@ -396,35 +138,193 @@
         </div>
         <div class="services-grid">
             <div class="service-item">
-                <img src="HESAPLAMA.png" alt="Dell Icon" class="service-icon">
+                <img src="sprites/HESAPLAMA.png" alt="Dell Icon" class="service-icon">
                 <h4 class="service-title">Hesaplama bileşeni</h4>
                 <p class="service-description">PlusClouds ve Dell iş birliği ile hazırlanmış özel bulut sunucular sayesinde düşük maliyet, yüksek performans.</p>
                 <a href="#" class="service-link">Hesaplama sunucuları incele</a>
             </div>
             <div class="service-item">
-                <img src="DEPOLAMA.png" alt="server Icon" class="service-icon">
+                <img src="sprites/DEPOLAMA.png" alt="server Icon" class="service-icon">
                 <h4 class="service-title">Depolama bileşeni</h4>
                 <p class="service-description">Terabyte başına alabileceğiniz en yüksek fiyat/performans oranı, sadece LEO SN serisi sunucularda.</p>
                 <a href="#" class="service-link">Depolama sunucularını incele</a>
             </div>
             <div class="service-item">
-                <img src="SDN.png" alt="SDN Icon" class="service-icon">
+                <img src="sprites/SDN.png" alt="SDN Icon" class="service-icon">
                 <h4 class="service-title">Ağ bileşeni</h4>
                 <p class="service-description">Dell ile özel olarak verilen, yazılımla yönetilen switchler sayesinde, en yüksek ağ performansını en düşük fiyata alırsınız.</p>
                 <a href="#" class="service-link">Ağ geçidini incele</a>
             </div>
             <div class="service-item">
-                <img src="LEO.png" alt="LEO Icon" class="service-icon">
+                <img src="sprites/LEO.png" alt="LEO Icon" class="service-icon">
                 <h4 class="service-title">Sanallaştırma & Yönetim</h4>
                 <p class="service-description">Orchestrator LEO ile her hangi bir lisans ücreti ödemeden bulut alt yapısına sahip olun.</p>
                 <a href="#" class="service-link">LEO'yu incele</a>
             </div>
         </div>
+        <section class="services-section">
+            <div class="services-header">
+                <h2>KENDİ BULUT VERİ MERKEZİNİZİ KURUN ...</h2>
+                <h3>PlusClouds'un özel olarak servis ettiği hizmetlerden tek tıkla faydalanabilirsiniz:</h3>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h4 class="service-title">PlusClouds CAS</h4>
+                        <p class="service-description">Dünyanın her yerinden erişebileceğiniz bir NAS servisi; Cloud Attached Storage.</p>
+                        <a href="#" class="service-link">PlusClouds CAS servisini incele</a>
+                    </div>
+                    <div class="service-item">
+                        <h4 class="service-title">PlusClouds Stash®</h4>
+                        <p class="service-description">Stash ile uygun fiyatlara telefonunuzdaki ve bilgisayarınızdaki değerli dosyalarınızı yedekleyin ve saklayın.</p>
+                        <a href="#" class="service-link">Stash ürünlerini incele</a>
+                    </div>
+                    <div class="service-item">
+                        <h4 class="service-title">PlusClouds Blitz®</h4>
+                        <p class="service-description">Tüm sistem ve sunucularınızı uzaktan takip edin, gerekirse otomatik müdahale edin.</p>
+                        <a href="#" class="service-link">Monitoring hizmetini incele</a>
+                    </div>
+                    <div class="service-item">
+                        <h4 class="service-title">Sanallaştırma & Yönetim</h4>
+                        <p class="service-description">Orchestrator LEO ile her hangi bir lisans ücreti ödemeden bulut alt yapısına sahip olun.</p>
+                        <a href="#" class="service-link">LEO'yu incele</a>
+                    </div>
+                </div>
+                <section class="services-section">
+                    <div class="services-header">
+                        <h2>FİYATA DAHİL ÖZELLİKLER</h2>
+                        <h3>PBizden hizmet alırken sahip olabileceğiniz ek hizmetler;</h3>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <h4 class="service-title">Uzaktan müdahale</h4>
+                                <p class="service-description">Talep ettiğiniz anda her biri yazılım ve sistem temeline sahip mühendislerimiz sizlerin yardımınızda olacaktır.</p>
+                            </div>
+                            <div class="service-item">
+                                <h4 class="service-title">Topluluk desteği</h4>
+                                <p class="service-description">Sürekli beraber olduğumuz ve eğitimler yaptığımız topluluğumuzla iletişime geçip sorunlarınıza çözüm bulabilirisiniz</p>
+                                <a href="#" class="service-link">Topluluğu ziyaret et</a>
+                            </div>
+                            <div class="service-item">
+                                <h4 class="service-title">Alt yapı planlaması</h4>
+                                <p class="service-description">Farklı depolama ihtiyaçlarına farklı çözümler üreten, yüksek ve bütçeye göre değişen performanslara sahip depolama hizmeti.</p>
+                            </div>
+                            <div class="service-item">
+                                <h4 class="service-title">7/24 izleme & bakım</h4>
+                                <p class="service-description">Yönetilen hizmetleri dahilinde sistemlerinizi ve sunucularınzı sürekli 7/24 takip ediyoruz ve en kısa sürede müdahale ediyoruz.</p>
+                                <a href="#" class="service-link">Daha Fazla</a>
+                            </div>
+                        </div>
+                    </div>
 
+
+
+                    <div class="container">
+                        <section class="hero4">
+                            <div class="hero4-text">
+                                <h1>HAYATI NASIL KOLAYLAŞTIRIYORUZ ?</h1>
+                                <p>20'den fazla bulut servisi, kolay kullanım paneli, uygun maliyetler ile servislerden bazıları;</p>
+                                
+                            </div>
+                            
+                        </section>
+                    </div> 
+
+
+
+                
+                
+                    <section class="services-section">
+                        
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <img src="sprites/server.png" alt="Server Icon" class="service-icon">
+                                <h4 class="service-title">Bulut & Sanal Sunucular/h4>
+                                <p class="service-description">Yüksek performans için optimize edilmiş Bulut Sunucular 5$'dan başlayan fiyatlar ve %50'ye varan indirim fırsatları.</p>
+                                <a href="#" class="service-link">Sunucu fırsatlarını incele</a>
+                            </div>
+                            <div class="service-item">
+                                <img src="sprites/vpc.png" alt="VPC Icon" class="service-icon">
+                                <h4 class="service-title">Bulut DNS ile sitenizi hızlandırın</h4>
+                                <p class="service-description">Bulut DNS ile daha hızlı açılan web sitelerine sahip olmak ücretsiz ve kolay: Alan adını kaydedin ve ayarları güncelleyin...</p>
+                                <a href="#" class="service-link">Sitenizi hızlandırın</a>
+                            </div>
+                            <div class="service-item">
+                                <img src="sprites/nas.png" alt="NAS Icon" class="service-icon">
+                                <h4 class="service-title">Ağ Depolama (NAS)</h4>
+                                <p class="service-description">Farklı depolama ihtiyaçlarına farklı çözümler üreten, yüksek ve bütçeye göre değişen performanslara sahip depolama hizmeti.</p>
+                                <a href="#" class="service-link">Yedeklemeye başla</a>
+                            </div>
+                            <div class="service-item">
+                                <img src="sprites/yuk.png" alt="Load Balancer Icon" class="service-icon">
+                                <h4 class="service-title">Yük Dengeleyici (LB)</h4>
+                                <p class="service-description">Artık sunucunuzun limitine ulaştınız ama daha fazla ziyaretçi mi alacaksınız? Yük dengeleyici servislerimizi inceleyin.</p>
+                                <a href="#" class="service-link">Bulutu kendi ofisinizde yaşayın</a>
+                            </div>
+
+                        </div>    
+                        
+                        <section class="hero3">
+                            <div class="hero3-container">
+                                <div class="hero3-image">
+                                    <img src="panel2x.webp" alt="Panel">
+                                </div>
+                                <div class="hero3-text">
+                                    
+                               
+                                    <p2>NASIL KULLANMAYA BAŞLARIM</p2>
+                                    <h1>Hemen 3 adımda servisleri kullanmaya başla</h1>
+                               
+                                    
+                                    <div class="kayit-ol">
+                                        <p2>KAYIT OL</p2>
+                                        <h3>Hemen buradan kayıt ol, ilk 100$'lık ücretsiz kullanım şansını yakala!</h3>
+                                        <p2>SERVİSİNİ YARAT</p2>
+                                        <h3>Türkiyenin en iyi datacenter'larında istediğin özellikteki servisini yarat.</h3>
+                                        <p2>KULLANMAYA BAŞLA</p2>
+                                        <h3>En geç 1 dakika içerisinde sunucun kullanıma hazır!</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section class="community">
+                            <div class="community-content">
+                              <div class="community-text">
+                                <h2>TOPLULUĞUMUZA KATIL</h2>
+                                <p>Sürekli blockchain, metaverse, distributed computing gibi yenilliklerden konuştuğumuz kanalımıza bekleriz.</p>
+                                <div class="community-buttons">
+                                  <a href="#">PlusClouds'a kayıt ol</a>
+                                  <a href="#">Discord sunucumuza gel</a>
+                                </div>
+                              </div>
+                              <div class="community-image">
+                                <img src="blockchain.webp" alt="Panel">
+                              </div>
+                            </div>
+                          </section>
+
+                          <div class="container">
+                            <section class="hero4">
+                                <div class="hero4-text">
+                                    <h1>22000+ şirket/geliştirici PlusClouds'u kullanıyor</h1>
+                                    <p>PlusClouds hayatınızı kolaylaştıracak bulut çözümleri sunar.</p>
+
+                                    <section class="logos">
+                                        <img src="logos/ifs_centered.png" alt="IFS Logo">
+                                        <img src="logos/koc.png" alt="Koç Logo">
+                                        <img src="logos/isnet_centered-2.png" alt="Isnet Logo">
+                                        <img src="logos/teknosa_centered-2.png" alt="Teknosa Logo">
+                                        <img src="logos/plexusmind-2.png" alt="Plexus Mind Logo">
+                                        <img src="logos/isnet_centered-2.png" alt="DBNet Logo">
+                                        <img src="logos/tofas-2.png" alt="Tofaş Logo">
+                                        <img src="logos/procenne-2.png" alt="Prolenne Logo">
+                                      </section>
+                            </section>
+                        </div> 
+
+                          
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section footer-logo">
-                <img src="your-logo.png" alt="PlusClouds Logo">
+                <img src="logos/your-logo.png" alt="PlusClouds Logo">
                 <div class="footer-info">
                     <p>2014 PlusClouds®.</p>
                     <p>♥ ile Türkiye'de üretildi.</p>
